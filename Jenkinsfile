@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                sh 'java -version'
+                sh 'mkdir test'
             }
         }
         stage('Test'){
             steps {
-                sh 'service nginx status'
+                sh 'cd test'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'service jenkins status'
+                sh 'cd ..'
             }
         }
     }
